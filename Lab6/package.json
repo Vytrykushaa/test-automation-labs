@@ -1,0 +1,24 @@
+{
+  "name": "lab6-e2e-tests",
+  "version": "1.0.0",
+  "description": "E2E тести для Лабораторної роботи №6 — AutomationExercise.com",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report",
+    "test:scenario1": "npx playwright test scenario1",
+    "test:scenario2": "npx playwright test scenario2",
+    "test:scenario3": "npx playwright test scenario3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  },
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
