@@ -1,21 +1,16 @@
 // tests/helpers/registration.js
-// Допоміжний модуль для реєстрації тестового користувача
 
 /**
  * Реєструє нового користувача на сайті automationexercise.com
- * @param {import('@playwright/test').Page} page
- * @param {string} email - унікальна email адреса
- * @param {string} name - ім'я користувача
  */
 async function registerUser(page, email, name = 'Test User') {
-  await page.goto('/login');
+  // waitUntil: domcontentloaded — уникає ERR_ABORTED при завантаженні
+  await page.goto('/login', { waitUntil: 'domcontentloaded' });
 
-  // Заповнити форму реєстрації (права частина сторінки — "New User Signup!")
   await page.locator('[data-qa="signup-name"]').fill(name);
   await page.locator('[data-qa="signup-email"]').fill(email);
   await page.locator('[data-qa="signup-button"]').click();
 
-  // Заповнити детальну форму акаунту
   await page.locator('#id_gender1').check();
   await page.locator('[data-qa="password"]').fill('Test@12345');
   await page.locator('[data-qa="days"]').selectOption('15');
@@ -36,8 +31,7 @@ async function registerUser(page, email, name = 'Test User') {
 }
 
 /**
- * Видаляє обліковий запис (прибирання після тесту)
- * @param {import('@playwright/test').Page} page
+ * Видаляє обліковий запис
  */
 async function deleteAccount(page) {
   const deleteLink = page.locator('a[href="/delete_account"]');
