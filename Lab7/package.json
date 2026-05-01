@@ -1,0 +1,17 @@
+{
+  "name": "lab7-automation-solution",
+  "version": "1.0.0",
+  "description": "Базове автоматизаційне рішення — Лабораторна робота №7",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:unit": "npx playwright test --project=unit",
+    "test:api": "npx playwright test --project=api",
+    "test:ui": "npx playwright test --project=ui",
+    "test:component": "npx playwright test --project=component",
+    "test:e2e": "npx playwright test --project=e2e",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
