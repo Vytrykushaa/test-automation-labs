@@ -1,0 +1,16 @@
+{
+  "name": "lab8-webdriverio-tests",
+  "version": "1.0.0",
+  "description": "Lab8 - UI тести з WebdriverIO для AutomationExercise.com",
+  "scripts": {
+    "test": "npx wdio run wdio.conf.js"
+  },
+  "devDependencies": {
+    "@wdio/cli": "^8.46.0",
+    "@wdio/local-runner": "^8.36.0",
+    "@wdio/mocha-framework": "^8.36.0",
+    "@wdio/spec-reporter": "^8.36.0",
+    "chromedriver": "^148.0.3",
+    "wdio-chromedriver-service": "^8.1.1"
+  }
+}
